@@ -1,0 +1,270 @@
+/* ==================================== */
+/* ABOUT PAGE 2025 - EYE-CATCHING PREMIUM */
+/* Text Crystal Clear | High Contrast | Glow */
+/* ==================================== */
+
+/* Hero - Super Eye-Catching */
+.about-hero {
+    position: relative;
+    min-height: 95vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    overflow: hidden;
+    padding-top: 140px;
+    margin-top: -140px;
+}
+
+.about-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* MAIN TITLE - GLOW + SUPER BOLD */
+.about-title {
+    font-size: 6.5rem;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -4px;
+    background: linear-gradient(90deg, #ffffff, #ffd93d, #ff6b6b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 40px rgba(255, 255, 255, 0.8),
+        0 10px 30px rgba(0, 0, 0, 0.6);
+    animation: glowText 3s infinite alternate;
+}
+
+@keyframes glowText {
+    from {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    }
+
+    to {
+        text-shadow: 0 0 60px rgba(255, 255, 255, 0.9), 0 0 100px rgba(255, 215, 61, 0.5);
+    }
+}
+
+.about-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    max-width: 900px;
+    margin: 2rem auto 0;
+}
+
+/* Main Content - High Contrast Text */
+.section-heading {
+    font-size: 4.2rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 2rem;
+}
+
+.lead-text {
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: #2d3436;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    margin-bottom: 2.5rem;
+}
+
+.about-desc {
+    font-size: 1.25rem;
+    line-height: 2;
+    color: #444;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Stats - Big & Bold */
+.stat-item {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+    transition: all 0.5s;
+}
+
+.stat-item:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 35px 80px rgba(102, 126, 234, 0.6);
+}
+
+.stat-number {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -3px;
+    color: white;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.stat-label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Glass Cards - Premium Text */
+.glass-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(30px);
+    border-radius: 35px;
+    padding: 4rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-card h3 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #1e3c72;
+    margin: 2rem 0 1.5rem;
+    letter-spacing: -1px;
+}
+
+.glass-card p {
+    font-size: 1.3rem;
+    line-height: 1.9;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Principal Message - Luxury Quote */
+.principal-message {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 4rem;
+    border-radius: 40px;
+    box-shadow: 0 30px 80px rgba(30, 60, 114, 0.5);
+    position: relative;
+}
+
+.quote-text {
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1.8;
+    font-style: italic;
+    color: white;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    padding-left: 3rem;
+}
+
+.quote-text::before {
+    content: '“';
+    position: absolute;
+    left: 0;
+    top: -20px;
+    font-size: 8rem;
+    opacity: 0.2;
+    font-family: Georgia, serif;
+}
+
+.principal-message footer {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffd93d;
+    margin-top: 2.5rem;
+}
+
+.principal-message footer span {
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Icon Circle */
+.icon-wrapper {
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2.5rem;
+    font-size: 3rem;
+    color: white;
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive - Text Perfect on All Devices */
+@media (max-width: 1200px) {
+    .about-title {
+        font-size: 5.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-title {
+        font-size: 4.8rem;
+    }
+
+    .section-heading {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 4rem;
+    }
+
+    .about-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .section-heading {
+        font-size: 3rem;
+    }
+
+    .stat-number {
+        font-size: 3.8rem;
+    }
+
+    .quote-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-title {
+        font-size: 3.5rem;
+    }
+
+    .about-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .section-heading {
+        font-size: 2.8rem;
+    }
+
+    .stat-number {
+        font-size: 3.2rem;
+    }
+
+    .quote-text {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - Bright Future School{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}?v=2025">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="contact-hero">
+    <div class="contact-overlay"></div>
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10">
+                <h1 class="contact-title animate__animated animate__fadeInDown">
+                    Get in Touch
+                </h1>
+                <p class="contact-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contact-wave"></div>
+</section>
+
+<!-- Contact Info + Form -->
+<section class="contact-main py-5 py-lg-7 bg-light">
+    <div class="container">
+        <div class="row g-5 justify-content-center">
+            <!-- Contact Info -->
+            <div class="col-lg-5">
+                <div class="contact-info-card">
+                    <h2 class="info-title mb-5">Contact Information</h2>
+
+                    <div class="info-grid">
+                        <div class="info-block">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h5>Address</h5>
+                                <p>Bright Future School<br>Sector 45, Gurugram<br>Haryana - 122003, India</p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+91 98765 43210<br>+91 98765 43211</p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>info@brightfuture.edu.in<br>admission@brightfuture.edu.in</p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h5>Office Hours</h5>
+                                <p>Monday - Saturday<br>8:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links mt-5">
+                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="contact-form-card">
+                    <h2 class="form-title text-center mb-5">Send us a Message</h2>
+
+                    <form action="{% url 'contact' %}" method="post">
+                        {% csrf_token %}
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" name="name" class="form-input" required>
+                                    <label>Your Name *</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="email" name="email" class="form-input" required>
+                                    <label>Email Address *</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="tel" name="phone" class="form-input">
+                                    <label>Phone Number</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" name="subject" class="form-input" required>
+                                    <label>Subject *</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <textarea name="message" rows="6" class="form-input" required></textarea>
+                                    <label>Your Message *</label>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="submit-btn">
+                                    <span>Send Message</span>
+                                    <i class="fas fa-paper-plane ms-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="success-message animate__animated animate__bounceIn mt-5">
+                            <i class="fas fa-check-circle fa-4x text-white mb-4"></i>
+                            <h3 class="text-white">{{ message }}</h3>
+                            <p class="text-white">We will contact you within 24 hours!</p>
+                            <a href="/" class="btn btn-light mt-4 px-5 py-3 rounded-pill">Back to Home</a>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Google Map -->
+<section class="map-section">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.879915888412!2d77.051636!3d28.458973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d86779d7f7%3A0xbec9f4f5f0b3e0c!2sBright%20Future%20School!5e0!3m2!1sen!2sin!4v1700000000000" 
+            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+{% endblock %}

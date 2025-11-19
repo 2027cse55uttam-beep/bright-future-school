@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Academics - Bright Future School{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/academics.css' %}?v=2025">
+{% endblock %}
+
+{% block content %}
+
+<!-- Academics Hero -->
+<section class="acad-hero">
+    <div class="acad-overlay"></div>
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10">
+                <h1 class="acad-title animate__animated animate__fadeInDown">
+                    Academics Excellence
+                </h1>
+                <p class="acad-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    World-Class Curriculum • Experienced Faculty • Proven Results
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="acad-wave"></div>
+</section>
+
+<!-- Curriculum Overview -->
+<section class="curriculum-section py-5 py-lg-7 bg-light">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <h2 class="section-title">Our Curriculum</h2>
+                <p class="section-desc">
+                    We follow the CBSE curriculum with a perfect blend of academics, co-curricular activities and life skills. Our approach ensures holistic development while maintaining academic rigor.
+                </p>
+                <div class="curriculum-highlights mt-5">
+                    <div class="highlight-item">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                            <h5>CBSE Affiliated</h5>
+                            <p>Up to Class XII</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-flask"></i>
+                        <div>
+                            <h5>Advanced Labs</h5>
+                            <p>Physics • Chemistry • Biology • Computer</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <h5>Smart Classrooms</h5>
+                            <p>Digital Learning Environment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/curriculum.jpg' %}" class="curriculum-img img-fluid rounded-4 shadow-xl" alt="Curriculum">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Streams Offered -->
+<section class="streams-section py-5 py-lg-7">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Streams Offered (Class XI-XII)</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="stream-card science">
+                    <div class="stream-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science Stream</h3>
+                    <p class="subjects">Physics • Chemistry • Mathematics • Biology/Computer Science • English</p>
+                    <p class="ideal-for">Ideal for Engineering, Medical, Research careers</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stream-card commerce">
+                    <div class="stream-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Commerce Stream</h3>
+                    <p class="subjects">Accountancy • Business Studies • Economics • Mathematics/Informatics Practices • English</p>
+                    <p class="ideal-for">Perfect for CA, CS, MBA, Finance careers</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stream-card humanities">
+                    <div class="stream-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Humanities Stream</h3>
+                    <p class="subjects">History • Political Science • Psychology/Sociology • English • Optional Subjects</p>
+                    <p class="ideal-for">Ideal for Law, Journalism, Civil Services, Social Work</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results & Achievements -->
+<section class="results-section py-5 py-lg-7 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Our Proud Achievements</h2>
+        <div class="row g-4 text-center">
+            <div class="col-md-3">
+                <div class="achievement-card">
+                    <h3 class="achievement-number counter" data-target="100">0</h3>
+                    <p>CBSE Result 2024</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="achievement-card">
+                    <h3 class="achievement-number">15+</h3>
+                    <p>Students scored 95%+</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="achievement-card">
+                    <h3 class="achievement-number">50+</h3>
+                    <p>IIT/JEE Qualified</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="achievement-card">
+                    <h3 class="achievement-number">30+</h3>
+                    <p>NEET Qualified</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/academics.js' %}?v=2025"></script>
+{% endblock %}

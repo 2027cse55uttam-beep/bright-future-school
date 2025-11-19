@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Admission 2025 - Bright Future School{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/admission.css' %}?v=2025">
+{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="adm-hero">
+    <div class="adm-overlay"></div>
+    <div class="container h-100 position-relative z-top">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-9 col-xl-8">
+                <h1 class="adm-title animate__animated animate__fadeInDown">
+                    Admission Open<br><span class="highlight">Session 2025-26</span>
+                </h1>
+                <p class="adm-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Secure your child's future with excellence • Limited seats available
+                </p>
+                <a href="#adm-form" class="adm-cta-btn animate__animated animate__fadeInUp animate__delay-2s">
+                    Apply Now <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="adm-wave"></div>
+</section>
+
+<!-- ===== ADMISSION FORM SECTION ===== -->
+<section class="adm-form-section py-5 py-lg-7 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-xl-8">
+                <!-- Form Card -->
+                <div class="adm-form-card glass-card">
+                    <div class="text-center mb-5">
+                        <h2 class="form-title">Admission Inquiry Form</h2>
+                        <div class="title-line"></div>
+                    </div>
+
+                    <form action="{% url 'admission' %}" method="post" novalidate>
+                        {% csrf_token %}
+
+                        <div class="row g-4">
+                            <!-- Student Name -->
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" name="name" id="student_name" class="form-input" required>
+                                    <label for="student_name">Student Full Name *</label>
+                                </div>
+                            </div>
+
+                            <!-- Class -->
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <select name="class_applying" id="class" class="form-input" required>
+                                        <option value="" disabled selected>Select Class</option>
+                                        <option>Nursery</option>
+                                        <option>LKG</option>
+                                        <option>UKG</option>
+                                        {% for i in "123456789" %}
+                                        <option>Class {{ i }}</option>
+                                        {% endfor %}
+                                        <option>Class 10</option>
+                                        <option>Class 11 (Science)</option>
+                                        <option>Class 11 (Commerce)</option>
+                                        <option>Class 11 (Arts)</option>
+                                        <option>Class 12 (Science)</option>
+                                        <option>Class 12 (Commerce)</option>
+                                        <option>Class 12 (Arts)</option>
+                                    </select>
+                                    <label for="class">Applying for Class *</label>
+                                </div>
+                            </div>
+
+                            <!-- Parent Name -->
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" name="parent_name" id="parent_name" class="form-input" required>
+                                    <label for="parent_name">Parent/Guardian Name *</label>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="tel" name="phone" id="phone" class="form-input" required>
+                                    <label for="phone">Phone Number *</label>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <input type="email" name="email" id="email" class="form-input" required>
+                                    <label for="email">Email Address *</label>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <textarea name="message" id="message" rows="4" class="form-input"></textarea>
+                                    <label for="message">Message (Optional)</label>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="col-12 text-center mt-5">
+                                <button type="submit" class="adm-submit-btn">
+                                    <span>Submit Application</span>
+                                    <i class="fas fa-paper-plane ms-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="success-alert animate__animated animate__bounceIn">
+                            <i class="fas fa-check-circle fa-3x mb-3"></i>
+                            <h3>Thank You!</h3>
+                            <p>{{ message }}</p>
+                            <p>We will contact you within 24 hours.</p>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

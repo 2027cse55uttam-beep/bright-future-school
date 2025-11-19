@@ -1,0 +1,162 @@
+/* ======================================== */
+/* BRIGHT FUTURE SCHOOL - GLOBAL STYLE 2025 */
+/* 100% Fixed | Mobile-First | Premium */
+/* ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-container {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#navbar-main {
+    background: rgba(10, 10, 30, 0.88) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    padding: 1.4rem 0 !important;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+    z-index: 1050;
+}
+
+#navbar-main.scrolled {
+    padding: 0.7rem 0 !important;
+    background: rgba(10, 10, 30, 0.98) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#brand-logo {
+    color: #ffd93d !important;
+    font-weight: 900;
+    font-size: 2rem !important;
+    text-shadow: 0 0 20px rgba(255, 217, 61, 0.4);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffd93d !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 6px;
+    left: 50%;
+    background: #ffd93d;
+    transition: all 0.4s ease;
+    border-radius: 3px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+    left: 15%;
+}
+
+#btn-apply-now {
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d) !important;
+    border: none !important;
+    border-radius: 50px;
+    padding: 0.8rem 2rem !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
+    transition: all 0.4s ease;
+}
+
+#btn-apply-now:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 107, 107, 0.7) !important;
+}
+
+@media (max-width: 991px) {
+    #navbar-main {
+        padding: 1rem 0 !important;
+    }
+
+    #navbar-collapse {
+        background: rgba(10, 10, 30, 0.99);
+        margin-top: 1rem;
+        border-radius: 18px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        border: 1px solid rgba(255, 215, 0, 0.25);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-link {
+        padding: 1rem 0 !important;
+        font-size: 1.3rem !important;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    #btn-apply-now {
+        width: 90%;
+        margin: 2rem auto 1rem;
+        display: block;
+        font-size: 1.3rem !important;
+        padding: 1.2rem !important;
+    }
+}
+
+#main-content {
+    padding-top: 110px;
+}
+
+@media (max-width: 991px) {
+    #main-content {
+        padding-top: 95px;
+    }
+}
+
+@media (max-width: 576px) {
+    #main-content {
+        padding-top: 85px;
+    }
+}
+
+#footer-main {
+    background: linear-gradient(135deg, #0f0f23, #1a1a2e) !important;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 3rem 0 !important;
+}
+
+#footer-copyright {
+    color: #ffd93d;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+#footer-credit {
+    color: #bbbbbb !important;
+    font-size: 0.95rem;
+}
+
+::selection {
+    background: #ffd93d;
+    color: #000;
+}

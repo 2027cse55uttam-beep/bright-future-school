@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Bright Future School - Excellence in Education{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}?v=2025">
+{% endblock %}
+
+{% block content %}
+
+<!-- Floating Particles -->
+<div class="hero-particles"></div>
+
+<!-- Hero Section - Fixed Top Gap -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+
+    <div class="container position-relative z-top">
+        <div class="row align-items-center min-vh-100 gy-5">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="hero-title animate__animated animate__fadeInUp">
+                    Welcome to <span class="hero-highlight">Bright Future</span><br class="d-none d-lg-block"> School
+                </h1>
+                <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Shaping Tomorrow's Leaders with Excellence, Innovation & Values Since 2005
+                </p>
+
+                <div
+                    class="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start mt-5 animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="/admission/" class="btn-hero-primary">Apply Admission 2025</a>
+                    <a href="/about/" class="btn-hero-outline">Explore More →</a>
+                </div>
+
+                <!-- Stats -->
+                <div class="row g-4 mt-5 justify-content-center justify-content-lg-start">
+                    <div class="col-4 col-sm-4">
+                        <div class="stat-box animate__animated animate__fadeInUp animate__delay-3s">
+                            <h3 class="stat-number">5000+</h3>
+                            <p class="stat-label">Students</p>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-4">
+                        <div class="stat-box animate__animated animate__fadeInUp animate__delay-3s">
+                            <h3 class="stat-number">200+</h3>
+                            <p class="stat-label">Teachers</p>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-4">
+                        <div class="stat-box animate__animated animate__fadeInUp animate__delay-3s">
+                            <h3 class="stat-number">100%</h3>
+                            <p class="stat-label">Results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 text-center">
+                {% if hero_image %}
+                <img src="{{ hero_image.image.url }}"
+                    class="hero-image img-fluid rounded-4 shadow-lg animate__animated animate__fadeInRight animate__delay-1s"
+                    alt="{{ hero_image.title }}">
+                {% else %}
+                <img src="{% static 'images/default-hero.jpg' %}" class="hero-image img-fluid rounded-4 shadow-lg"
+                    alt="Bright Future School">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-wave"></div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="features-section py-5 py-lg-7 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Why Choose Bright Future?</h2>
+        <div class="row g-4 g-lg-5">
+            <div class="col-md-4">
+                <div class="feature-card p-4 p-lg-5 text-center h-100 animate__animated animate__fadeInUp">
+                    <div class="feature-icon">🏆</div>
+                    <h4 class="feature-heading">Academic Excellence</h4>
+                    <p class="feature-text">100% board results • State toppers • IIT/NEET success stories</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card p-4 p-lg-5 text-center h-100 animate__animated animate__fadeInUp"
+                    style="animation-delay: 0.2s;">
+                    <div class="feature-icon">🏛️</div>
+                    <h4 class="feature-heading">World-Class Campus</h4>
+                    <p class="feature-text">Smart classrooms • Advanced labs • Swimming pool • Sports arena</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card p-4 p-lg-5 text-center h-100 animate__animated animate__fadeInUp"
+                    style="animation-delay: 0.4s;">
+                    <div class="feature-icon">🌟</div>
+                    <h4 class="feature-heading">Holistic Growth</h4>
+                    <p class="feature-text">Arts • Music • Leadership • Personality development</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery-section py-5 py-lg-7">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Moments from Our Campus</h2>
+
+        {% if gallery %}
+        <div class="gallery-grid">
+            {% for img in gallery %}
+            <div class="gallery-item" data-title="{{ img.title|default:'Our School' }}">
+                <img src="{{ img.image.url }}" alt="{{ img.title }}" class="img-fluid" loading="lazy">
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-center text-muted fs-5">Gallery images will appear soon...</p>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery - Bright Future School{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}?v=2025">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+{% endblock %}
+
+{% block content %}
+
+<!-- Gallery Hero -->
+<section class="gallery-hero">
+    <div class="gallery-overlay"></div>
+    <div class="container h-100 position-relative z-top">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10">
+                <h1 class="gallery-title animate__animated animate__fadeInDown">
+                    School Gallery
+                </h1>
+                <p class="gallery-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Capturing Joy, Learning & Unforgettable Moments of Bright Future School
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="gallery-wave"></div>
+</section>
+
+<!-- Gallery Grid - Admin Images -->
+<section class="gallery-section py-5 py-lg-7 bg-light">
+    <div class="container">
+        {% if gallery %}
+        <div class="gallery-grid">
+            {% for img in gallery %}
+            <div class="gallery-item">
+                <a href="{{ img.image.url }}" data-lightbox="school-gallery" data-title="{{ img.title|default:'Bright Future School' }}">
+                    <img src="{{ img.image.url }}" alt="{{ img.title|default:'School Event' }}" loading="lazy">
+                    <div class="gallery-caption-overlay">
+                        <div class="caption-content">
+                            <i class="fas fa-search-plus"></i>
+                            <p>{{ img.title|default:'View Image' }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <div class="empty-gallery">
+                <i class="fas fa-images fa-5x text-muted mb-4"></i>
+                <h3 class="text-muted">Gallery is being updated...</h3>
+                <p>Beautiful moments coming soon!</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="{% static 'js/gallery.js' %}?v=2025"></script>
+{% endblock %}
